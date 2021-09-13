@@ -1,0 +1,246 @@
+:root{
+    /* color */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+  
+
+
+
+    font-size:16px;
+    --main-grid-height:20rem;
+    --eighty-onehondred:80%;
+
+  }
+
+  @font-face {
+    font-family: spart400;
+    src:url("../fonts/Spartan-400.ttf");
+    
+  }
+  @font-face {
+    font-family: spart500;
+    src:url("../fonts/Spartan-500.ttf");
+
+  }
+  @font-face {
+    font-family: spart700;
+    src:url("../fonts/Spartan-700.ttf");
+
+  }
+
+  *{
+    box-sizing: border-box;
+    font-weight: normal;
+  }
+  
+body{
+  max-height:100vh;
+  background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+  background-position: top left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 30% 50%, 85% 90%;
+  margin:0 5rem;
+  overflow-x: hidden;
+
+}
+  
+  main{
+    width:100%;
+    margin:5rem auto;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "user ratings"
+                        " reviews reviews ";
+  }
+
+
+  section{
+    height:var(--main-grid-height);
+  }
+
+    section.usernmbr{
+      grid-area:user;
+    }
+
+
+              section.usernmbr > h1{
+                  font-family: spart700;
+                  margin:0;
+                  font-weight: normal;
+                  font-size: 3rem;
+                  width:var(--eighty-onehondred);
+                  color: var(--Very-Dark-Magenta);
+                  
+                }
+
+                section.usernmbr > p{
+                  font-family: spart500;
+                  color:var(--Dark-Grayish-Magenta);
+                  width:var(--eighty-onehondred);
+                  margin-top:5px;
+                  line-height: 25px;
+                  
+                  
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+  section.ratings{
+    grid-area:ratings;
+    display:flex;
+    flex-direction: column;
+  }
+                    section.ratings > div{
+                    width:85%;
+                    margin-bottom: 1rem;
+                    height:21%;
+                    background-color: var(--Light-Grayish-Magenta);
+                    display:flex;
+                    align-items: center;
+                    border-radius: 10px;
+                    }
+                    section.ratings > div::before{
+                        content: " ";
+                        display:inline-block;
+                        height:20px;
+                        margin:0 0 0 1rem;
+                        background-image: url("../images/icon-star.svg");
+
+                        /* total of 5 stars */
+                        background-repeat: space;  
+                        width:6rem;
+
+                        
+
+                        }
+                        /* makes a left, center and right card */
+                            div.first-rating{
+                            align-self: flex-start;
+                            }
+                            div.second-rating{
+                            align-self: center;
+                            }
+                            div.third-rating{
+                            align-self: flex-end;
+                            }
+
+                            section.ratings h2{
+                            font-size: 1rem;
+                            font-family: spart700;
+                            color:var(--Very-Dark-Magenta);
+                            width:-webkit-fit-content;
+                            width:-moz-fit-content;
+                            width:fit-content;
+                            margin-left: 2rem;
+                            
+
+                            }
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+  section.reviews{
+    grid-area:reviews;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    
+
+  }
+            section.reviews > article{
+                width:30%;
+                height:85%;
+                background-color: var(--Very-Dark-Magenta);
+                padding:2.5rem 2rem 2rem 2rem;
+                border-radius: 6px;
+                
+                
+            }
+            .top{
+                    display:flex;
+                }
+
+                .image{
+                    width:3rem;
+                    display:block;
+                    border-radius: 50%;
+                    height:3rem;
+                    align-self: center;
+
+                }
+                        
+                .name{
+                    padding:5px 0 0 20px;
+                
+                }
+                    section.reviews h2{
+                        font-size: 1.1rem;
+                        color:white;
+                        font-family: spart700;
+                        margin:0;
+                        font-weight: normal;
+                    }
+                    section.reviews h3{
+                        font-size: 1.1rem;
+                        font-family:spart400;
+                        color:var(--Soft-Pink);
+                        margin:4px 0 0 0;
+                        font-weight: normal;
+                        
+                    }
+                    section.reviews blockquote{
+                        margin:2rem 0 0 0;
+                        color:white;
+                        font-family: spart400;
+                        width:100%;
+
+                    }
+
+
+                    /* makes top, middle and bottom card */
+                article.colton{
+                    align-self: flex-start;
+                }
+                
+                article.irene{
+                    align-self: center;
+
+                }
+                article.anne{
+                    align-self: flex-end;
+                }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
